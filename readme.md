@@ -5,7 +5,7 @@ This image creates a container that runs stunnel. It can be used within a servic
 
 ## Usage
 
-Here's an example for a `docker-compose.yml` file that runs redis and stunnel.
+Here's an example of a `docker-compose.yml` file that runs redis and stunnel.
 
 ```yaml
 version: "3"
@@ -40,7 +40,7 @@ networks:
   my-network:
 ```
 
-The folder structure looks something like this:
+The projects folder structure looks something like this:
 
 ```
 /my-service
@@ -51,12 +51,11 @@ The folder structure looks something like this:
     certificate.pem
 ```
 
-Both folders in `my-service` are used as volumes the containers. That allows us to pass on some config files to stunnel an redis in the command section. 
+Both folders, `redis` and `stunnel`, in `my-service` are used as volumes. That allows us to pass on some config files and a certificate to stunnel an redis. 
 
-> The command sections allow us to specify some arguments for `stunnel` and `redis-server`.
-> When the conainer starts the commands that are executed will look like this:
-> `redis-server /data/redis.conf`
-> `stunnel /data/stunnel.conf`
+> The command section allows us to specify some arguments for `stunnel` and `redis-server`.
+> When the conainer starts the commands that are executed will look like
+> `redis-server /data/redis.conf` and `stunnel /data/stunnel.conf`
 
 The `stunnel.conf` looks like this:
 
@@ -81,3 +80,11 @@ connect = redis:6379
 * `docker tag stunnel andybitz/stunnel:latest`
 * `docker push andybitz/stunnel:1.0.0`
 * `docker push andybitz/stunnel:lastest`
+
+> *note to self*
+
+
+### Questions, suggestions or anything else?
+
+Go the the github repo [andybitz/docker-stunnel](https://github.com/AndyBitz/docker-stunnel).
+
