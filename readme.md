@@ -87,4 +87,3 @@ connect = redis:6379
 ### Questions, suggestions or anything else?
 
 Go the the github repo [andybitz/docker-stunnel](https://github.com/AndyBitz/docker-stunnel).
-
